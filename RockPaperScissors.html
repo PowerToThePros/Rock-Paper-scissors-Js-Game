@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RockPaperScissors</title>
+  </head>
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    
+    <button onclick="
+    yourMove = 'Rock';
+    const randomNumber = Math.random();
+    if(randomNumber >= 0 && randomNumber < 1/3)
+    {
+      computerMove = 'Rock';
+    }
+    else if(randomNumber >= 1/3 && randomNumber < 2/3)
+    {
+      computerMove = 'Paper';
+    }
+    else
+    {
+      computerMove = 'Scissors';
+    }
+
+    if(computerMove === 'Rock')
+    {
+      result = 'Tie';
+    }
+    else if(computerMove === 'Paper'){
+      result = 'Lose';
+    }
+    else
+    {
+      result = 'Win';
+    }
+
+    alert(`your move: ${yourMove}, computer move: ${computerMove}, result: ${result}`);
+
+    ">ROCK</button>
+
+    <button onclick="
+    yourMove = 'Paper';
+    randomNumber = Math.random();
+    if(randomNumber >= 0 && randomNumber < 1/3)
+    {
+      computerMove = 'Rock';
+    }
+    else if(randomNumber >= 1/3 && randomNumber < 2/3)
+    {
+      computerMove = 'Paper';
+    }
+    else
+    {
+      computerMove = 'Scissors';
+    }
+
+    if(computerMove === 'Rock')
+    {
+      result = 'Win';
+    }
+    else if(computerMove === 'Paper'){
+      result = 'Tie';
+    }
+    else
+    {
+      result = 'Lose';
+    }
+
+    alert(`your move: ${yourMove}, computer move: ${computerMove}, result: ${result}`);
+
+    ">PAPER</button>
+
+    <button onclick="
+    yourMove='Scissors';
+    randomNumber = Math.random();
+    if(randomNumber >= 0 && randomNumber < 1/3)
+    {
+      computerMove = 'Rock';
+    }
+    else if(randomNumber >= 1/3 && randomNumber < 2/3)
+    {
+      computerMove = 'Paper';
+    }
+    else
+    {
+      computerMove = 'Scissors';
+    }
+
+    if(computerMove === 'Rock')
+    {
+      result = 'Lose';
+    }
+    else if(computerMove === 'Paper'){
+      result = 'Win';
+    }
+    else
+    {
+      result = 'Tie';
+    }
+
+    alert(`your move: ${yourMove}, computer move: ${computerMove}, result: ${result}`);
+
+    ">SCISSORS</button>
+    <script>
+      let computerMove = '';
+      let result = '';
+      let yourMove = '';
+      alert(4 && 5);
+    </script>
+  </body>
+</html>
