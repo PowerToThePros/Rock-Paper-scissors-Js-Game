@@ -12,15 +12,19 @@
 
     <button onclick="playGame('Scissors')">SCISSORS</button>
 
-    <button onclick="score.wins = 0; score.losses = 0; score.ties = 0;">ResetScore</button>
+    <button onclick="score.wins = 0; score.losses = 0; score.ties = 0; localStorage.removeItem('Score');">ResetScore</button>
     
     <script>
 
-      let score = { /*a object to keep track of the score*/
+      const score = { /*a object to keep track of the score*/
         wins: 0,
         losses: 0,
         ties: 0
       };
+
+      score = JSON.parse(localStorage.getItem('Score')) || score; // the default value score is cleaner then the line below
+
+      //score = !savedScore ? score : savedScore;
 
       function playGame(move)
       {
@@ -90,6 +94,9 @@
         {
           score.ties++;
         }
+
+
+        localStorage.setItem('Score', JSON.stringify(score)); /*local storage keeps data saved even when refreshing the page, but it only saves strings, so we convert it into a json string*/
 
         alert(`your move: ${move}, computer move: ${computerMove}, result: ${result}\nwins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`);
 
