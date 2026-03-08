@@ -11,8 +11,16 @@
     <button onclick="playGame('Paper');">PAPER</button>
 
     <button onclick="playGame('Scissors')">SCISSORS</button>
+
+    <button onclick="score.wins = 0; score.losses = 0; score.ties = 0;">ResetScore</button>
     
     <script>
+
+      let score = { /*a object to keep track of the score*/
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
 
       function playGame(move)
       {
@@ -70,9 +78,22 @@
           return;
         }
         
-        alert(`your move: ${move}, computer move: ${computerMove}, result: ${result}`);
+        if(result === 'Win')
+        {
+          score.wins++;
+        }
+        else if(result === 'Lose')
+        {
+          score.losses++;
+        }
+        else if(result === 'Tie')
+        {
+          score.ties++;
+        }
 
-      };
+        alert(`your move: ${move}, computer move: ${computerMove}, result: ${result}\nwins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`);
+
+      }
 
       function pickComputerMove()
       {
@@ -94,7 +115,7 @@
         }
 
         return computerMove;
-      };
+      }
 
     </script>
   </body>
