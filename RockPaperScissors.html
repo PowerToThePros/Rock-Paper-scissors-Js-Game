@@ -9,26 +9,31 @@
   <body>
     <h1>Rock Paper Scissors</h1>
     
-    <button onclick="playGame('rock');" class="move-button"><img class="move-Image" src="images/rock-emoji.png"></button>
+    <button class="move-button js-rock-button"><img class="move-Image" src="images/rock-emoji.png"></button>
 
-    <button onclick="playGame('paper');" class="move-button"><img class="move-Image" src="images/paper-emoji.png"></button>
+    <button class="move-button js-paper-button"><img class="move-Image" src="images/paper-emoji.png"></button>
 
-    <button onclick="playGame('scissors')" class="move-button"><img class="move-Image" src="images/scissors-emoji.png"></button>
+    <button class="move-button js-scissors-button"><img class="move-Image" src="images/scissors-emoji.png"></button>
 
     <p class="js-moves" style="height: 1em;"></p> 
     <p class="js-result result"></p>
     <p class="js-score score"></p>
     
-   
-    <button class="reset-score-button" onclick=" //reset button
-    score.wins = 0; 
-    score.losses = 0; 
-    score.ties = 0; 
-    localStorage.removeItem('Score'); 
-    updateResultElement('Make a move');
-    updateScoreElement();
-    ">ResetScore</button>
+    <button class="js-reset-score-button reset-score-button">Reset Score</button>
+    <button class="js-auto-play-button auto-play-button">Auto Play</button>
   
+    <div class="modal js-modal">
+      <diV class="blur"></diV>
+      <div class="modal-content">
+        <h2>Attention</h2>
+        <br>
+        <p>are you sure you want to <br>reset your score?</p>
+        <br>
+        <button class="modal-button js-deny-button">Deny</button>
+        <button class="modal-button js-confirm-button">Confirm</button>
+      </div>
+    </div>
+
     <script src="RockPaperScissors.js"></script>
   </body>
 </html>
